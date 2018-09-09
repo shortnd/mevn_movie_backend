@@ -10,6 +10,14 @@ module.exports.controller = (app) => {
       });
     });
   });
+
+  // fetch a single movie
+  app.get('/movies/:id', (req, res) => {
+    MovieSchema.findById(req.params.id, (error, movie) => {
+      if (error) { console.log(error); }
+      res.send(movie);
+    });
+  });
   // Add A movie
   app.post('/movies/add', (req, res) => {
     const newMovie = new MovieSchema({
