@@ -9,7 +9,6 @@ module.exports.controller = (app) => {
       release_year: req.body.release_year,
       genre: req.body.genre,
     });
-
     newMovie.save((error, movie) => {
       if (error) {console.log(error)}
       res.send(movie);
