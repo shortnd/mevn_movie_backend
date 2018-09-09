@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
 const fs = require('fs');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const router = require('./routes/index');
