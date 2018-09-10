@@ -5,12 +5,14 @@ const cors = require('cors');
 const morgan = require('morgan');
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
+const passport = require('passport');
 
 const app = express();
 const router = require('./routes/index');
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(passport.initialize());
 
 // connect to mongodb
 mongoose.connect('mongodb://localhost/movie_rating_app', function() {
